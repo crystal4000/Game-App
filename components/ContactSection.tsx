@@ -70,17 +70,7 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    borderBottom: "2px solid rgba(255, 255, 255, 0.54)",
-                    borderRadius: 0,
-                    color: "#fff",
-                    padding: "10px 0",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: 500,
-                  }}
+                  className="custom-input"
                 />
               </Form.Group>
 
@@ -92,17 +82,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    borderBottom: "2px solid rgba(255, 255, 255, 0.54)",
-                    borderRadius: 0,
-                    color: "#fff",
-                    padding: "10px 0",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: 500,
-                  }}
+                  className="custom-input"
                 />
               </Form.Group>
 
@@ -114,17 +94,7 @@ const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    borderBottom: "2px solid rgba(255, 255, 255, 0.54)",
-                    borderRadius: 0,
-                    color: "#fff",
-                    padding: "10px 0",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: 500,
-                  }}
+                  className="custom-input"
                 />
               </Form.Group>
 
@@ -136,19 +106,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  style={{
-                    backgroundColor: "transparent",
-                    border: "none",
-                    borderBottom: "2px solid rgba(255, 255, 255, 0.54)",
-                    borderRadius: 0,
-                    color: "#fff",
-                    padding: "10px 0",
-                    fontSize: "16px",
-                    fontStyle: "italic",
-                    fontWeight: 500,
-                    height: "156px",
-                    resize: "none",
-                  }}
+                  className="custom-input"
                 />
               </Form.Group>
 
@@ -192,7 +150,7 @@ const ContactSection = () => {
               <h3 className="mb-4">Howdy! Say hello</h3>
               <p
                 className="mb-5"
-                style={{ fontSize: "16px", color: "#a9b5c5", lineHeight: 1.9 }}
+                style={{ fontSize: "16px", color: "#fff", lineHeight: 1.9 }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
@@ -215,7 +173,7 @@ const ContactSection = () => {
                   style={{
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: "#a9b5c5",
+                    color: "#fff",
                   }}
                 >
                   Main Str, no 23, New York
@@ -236,7 +194,7 @@ const ContactSection = () => {
                   style={{
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: "#a9b5c5",
+                    color: "#fff",
                   }}
                 >
                   +546 990221 123
@@ -257,7 +215,7 @@ const ContactSection = () => {
                   style={{
                     fontSize: "16px",
                     fontWeight: 500,
-                    color: "#a9b5c5",
+                    color: "#fff",
                   }}
                 >
                   hosting@contact.com
@@ -267,6 +225,35 @@ const ContactSection = () => {
           </Col>
         </Row>
       </Container>
+      {/* Custom CSS to remove focus styles */}
+      <style jsx>{`
+        :global(.custom-input) {
+          background-color: transparent !important;
+          border: none !important;
+          border-bottom: 2px solid rgba(255, 255, 255, 0.54) !important;
+          border-radius: 0 !important;
+          color: #fff !important;
+          padding: 10px 0 !important;
+          font-size: 16px !important;
+          font-style: italic !important;
+        }
+
+        :global(.custom-input::placeholder) {
+          color: #fff !important;
+        }
+
+        :global(.custom-input:focus) {
+          box-shadow: none !important;
+          outline: none !important;
+          border-color: #9b91a6 !important;
+        }
+
+        :global(.custom-input:active) {
+          box-shadow: none !important;
+          outline: none !important;
+          border-color: #9b91a6 !important;
+        }
+      `}</style>
     </section>
   );
 };

@@ -89,7 +89,7 @@ const GameSingle: React.FC<GameSingleProps> = ({ game }) => {
               </h4>
               <p
                 className="mb-4"
-                style={{ fontSize: "16px", color: "#a9b5c5", lineHeight: 1.8 }}
+                style={{ fontSize: "16px", color: "#fff", lineHeight: 1.8 }}
               >
                 {game.content.gameplay}
               </p>
@@ -99,7 +99,7 @@ const GameSingle: React.FC<GameSingleProps> = ({ game }) => {
               </h4>
               <p
                 className="mb-4"
-                style={{ fontSize: "16px", color: "#a9b5c5", lineHeight: 1.8 }}
+                style={{ fontSize: "16px", color: "#fff", lineHeight: 1.8 }}
               >
                 {game.content.conclusion}
               </p>

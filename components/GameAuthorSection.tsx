@@ -50,7 +50,7 @@ const GameAuthorSection: React.FC<GameAuthorSectionProps> = ({ author }) => {
               style={{
                 fontSize: "16px",
                 fontWeight: 500,
-                color: "#a9b5c5",
+                color: "#fff",
                 lineHeight: 1.8,
               }}
             >

@@ -94,7 +94,7 @@ const BlogList = () => {
                 <div className="text-white">
                   <div
                     className="mb-3"
-                    style={{ fontSize: "18px", color: "#a9b5c5" }}
+                    style={{ fontSize: "18px", color: "#fff", fontWeight: 700 }}
                   >
                     {post.date} / in{" "}
                     <Link href="#" style={{ color: "#00a6eb" }}>
@@ -107,7 +107,7 @@ const BlogList = () => {
                     className="mb-4"
                     style={{
                       fontSize: "16px",
-                      color: "#a9b5c5",
+                      color: "#fff",
                       lineHeight: 1.8,
                     }}
                   >

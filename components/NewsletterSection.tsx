@@ -59,7 +59,7 @@ const NewsletterSection = () => {
               width: "100%",
               maxWidth: "787px",
             }}
-            className="mb-3 mb-md-0 bg-transparent"
+            className="mb-3 mb-md-0 bg-transparent text-white custom-input"
           />
 
           <Button type="submit" className="site-btn">
@@ -72,6 +72,21 @@ const NewsletterSection = () => {
             />
           </Button>
         </Form>
+
+        {/* Custom CSS to remove focus styles */}
+        <style jsx>{`
+          :global(.custom-input:focus) {
+            box-shadow: none !important;
+            outline: none !important;
+            border-color: #9b91a6 !important;
+          }
+
+          :global(.custom-input:active) {
+            box-shadow: none !important;
+            outline: none !important;
+            border-color: #9b91a6 !important;
+          }
+        `}</style>
       </Container>
     </section>
   );

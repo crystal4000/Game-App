@@ -16,7 +16,7 @@ export default function ContactPage() {
           { name: "Home", link: "/" },
           { name: "Contact", link: null },
         ]}
-        bgImage="/img/page-top-bg/4.jpg"
+        bgImage="/img/slider-bg-1.jpg"
       />
       <ContactSection />
       <NewsletterSection />

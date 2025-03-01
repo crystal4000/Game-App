@@ -137,11 +137,11 @@ const BlogSidebar = () => {
               </div>
               <div>
                 <div
-                  style={{ color: "#a9b5c5", fontSize: "12px" }}
+                  style={{ color: "#fff", fontSize: "12px" }}
                   className="mb-1"
                 >
                   {post.date} / in{" "}
-                  <Link href="#" style={{ color: "#00a6eb" }}>
+                  <Link href="#" style={{ color: "#fff", fontWeight: 700 }}>
                     {post.category}
                   </Link>
                 </div>

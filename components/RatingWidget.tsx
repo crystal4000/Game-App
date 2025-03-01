@@ -14,7 +14,7 @@ interface RatingWidgetProps {
 const RatingWidget: React.FC<RatingWidgetProps> = ({ ratings }) => {
   return (
     <div className="widget-item mb-4">
-      <div style={{ backgroundColor: "#081624", padding: "55px 0 30px" }}>
+      <div style={{ backgroundColor: "#081624", padding: "35px 0 30px" }}>
         <h4
           className="widget-title text-white text-uppercase ps-4 mb-4"
           style={{ fontWeight: 700, fontStyle: "italic" }}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { BlogPost, TrendingPost, Category } from "@/types";
 import TrendingWidget from "./TrendingWidget";
-import CategoriesWidget from "./CategoriesWidget";
+import SidebarWidget from "./SidebarWidget";
 
 const BlogSection = () => {
   const blogPosts: BlogPost[] = [
@@ -138,7 +138,7 @@ const BlogSection = () => {
                     </Link>
                   </div>
                   <h3 className="mb-5">{post.title}</h3>
-                  <p style={{ color: "#68647d" }}>{post.excerpt}</p>
+                  <p style={{ color: "#fff" }}>{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}
                     className="read-more text-white mt-auto"
@@ -159,7 +159,7 @@ const BlogSection = () => {
           <Col xl={3} lg={4} md={5} className="sidebar ps-md-4">
             <div>
               <TrendingWidget posts={trendingPosts} />
-              <CategoriesWidget categories={categories} />
+              <SidebarWidget title="Latest Comments" items={categories} />
 
               <div className="mb-5">
                 <Link href="#" className="d-block">

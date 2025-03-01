@@ -67,7 +67,7 @@ const HeroSlider = () => {
         activeIndex={index}
         onSelect={handleSelect}
         controls={true}
-        indicators={true}
+        indicators={false}
         interval={5000}
         wrap={true}
         pause="hover"
@@ -82,8 +82,8 @@ const HeroSlider = () => {
         {slides.map((slide) => (
           <Carousel.Item
             key={slide.id}
-            className="position-relative overflow-hidden"
-            style={{ borderBottom: "2px solid #00a6eb", height: "921px" }}
+            className="position-relative overflow-hidden hero-slide"
+            style={{ borderBottom: "2px solid #00a6eb" }}
           >
             <div
               className="position-absolute w-100 h-100 top-0 start-0 bg-set"
@@ -104,20 +104,10 @@ const HeroSlider = () => {
               style={{ zIndex: 2 }}
             >
               <Container>
-                <h1
-                  className="fw-bolder mb-3 text-white"
-                  style={{ fontSize: "140px" }}
-                >
+                <h1 className="fw-bolder mb-3 text-white hero-title">
                   {slide.title}
                 </h1>
-                <p
-                  className="mx-auto mb-5"
-                  style={{
-                    maxWidth: "1000px",
-                    color: "rgba(255, 255, 255, 0.4)",
-                    fontSize: "24px",
-                  }}
-                >
+                <p className="mx-auto mb-5 hero-description">
                   {slide.description}
                 </p>
                 <Link href={slide.btnLink} className="site-btn">
@@ -134,6 +124,90 @@ const HeroSlider = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+
+      {/* Responsive styles */}
+      <style jsx global>{`
+        .hero-slide {
+          height: 100vh;
+          max-height: 921px;
+        }
+
+        .hero-title {
+          font-size: 140px;
+          line-height: 1.1;
+        }
+
+        .hero-description {
+          max-width: 1000px;
+          color: #fff;
+          font-size: 24px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Extra large devices (large desktops, less than 1400px) */
+        @media (max-width: 1399.98px) {
+          .hero-title {
+            font-size: 120px;
+          }
+
+          .hero-description {
+            font-size: 22px;
+            max-width: 900px;
+          }
+        }
+
+        /* Large devices (desktops, less than 1200px) */
+        @media (max-width: 1199.98px) {
+          .hero-title {
+            font-size: 100px;
+          }
+
+          .hero-description {
+            font-size: 20px;
+            max-width: 800px;
+          }
+        }
+
+        /* Medium devices (tablets, less than 992px) */
+        @media (max-width: 991.98px) {
+          .hero-title {
+            font-size: 80px;
+          }
+
+          .hero-description {
+            font-size: 18px;
+            max-width: 700px;
+          }
+        }
+
+        /* Small devices (landscape phones, less than 768px) */
+        @media (max-width: 767.98px) {
+          .hero-slide {
+            height: 80vh;
+          }
+
+          .hero-title {
+            font-size: 60px;
+          }
+
+          .hero-description {
+            font-size: 16px;
+            max-width: 100%;
+          }
+        }
+
+        /* Extra small devices (portrait phones, less than 576px) */
+        @media (max-width: 575.98px) {
+          .hero-title {
+            font-size: 42px;
+          }
+
+          .hero-description {
+            font-size: 14px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -16,7 +16,7 @@ export default function ReviewPage() {
           { name: "Home", link: "/" },
           { name: "Reviews", link: null },
         ]}
-        bgImage="/img/page-top-bg/2.jpg"
+        bgImage="/img/slider-bg-1.jpg"
       />
       <ReviewList />
       <NewsletterSection />

@@ -106,9 +106,9 @@ const GamesList = () => {
           ))}
         </ul>
 
-        <Row>
+        <Row className="mx-auto mx-md-0">
           <Col xl={9} lg={8} md={7}>
-            <Row>
+            <Row className="mx-auto mx-md-0">
               {games.map((game) => (
                 <Col key={game.id} lg={3} md={6} className="mb-5">
                   <div className="game-item">

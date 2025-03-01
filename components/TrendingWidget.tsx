@@ -28,12 +28,9 @@ const TrendingWidget: React.FC<TrendingWidgetProps> = ({ posts }) => {
               />
             </div>
             <div>
-              <div
-                style={{ color: "#68647d", fontSize: "12px" }}
-                className="mb-1"
-              >
+              <div style={{ color: "#fff", fontSize: "12px" }} className="mb-1">
                 {post.date} / in{" "}
-                <Link href="#" style={{ color: "#00a6eb" }}>
+                <Link href="#" style={{ color: "#fff", fontWeight: 700 }}>
                   {post.category}
                 </Link>
               </div>

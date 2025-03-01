@@ -52,7 +52,7 @@ const IntroSection = () => {
                 <h3 className="mb-4" style={{ maxWidth: "370px" }}>
                   {item.title}
                 </h3>
-                <p className="mb-4" style={{ color: "#68647d" }}>
+                <p className="mb-4" style={{ color: "#fff" }}>
                   {item.excerpt}
                 </p>
                 <Link href="#" className="read-more text-white">

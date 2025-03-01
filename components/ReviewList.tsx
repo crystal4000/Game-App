@@ -159,10 +159,13 @@ const ReviewList = () => {
 
                   <div
                     className="mb-3"
-                    style={{ fontSize: "18px", color: "#a9b5c5" }}
+                    style={{ fontSize: "18px", color: "#fff" }}
                   >
                     {review.date} / in{" "}
-                    <Link href="#" style={{ color: "#00a6eb" }}>
+                    <Link
+                      href="#"
+                      style={{ color: "#00a6eb", fontWeight: 700 }}
+                    >
                       {review.category}
                     </Link>
                   </div>
@@ -172,7 +175,7 @@ const ReviewList = () => {
                     className="mb-4"
                     style={{
                       fontSize: "16px",
-                      color: "#a9b5c5",
+                      color: "#fff",
                       lineHeight: 1.8,
                     }}
                   >
