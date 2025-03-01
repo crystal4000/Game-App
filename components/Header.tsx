@@ -5,20 +5,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { MenuItem } from "@/types";
+import {
+  FaPinterest,
+  FaFacebookF,
+  FaTwitter,
+  FaDribbble,
+  FaBehance,
+  FaUser,
+} from "react-icons/fa";
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
   const menuItems: MenuItem[] = [
     { id: 1, title: "Home", link: "/" },
-    {
-      id: 2,
-      title: "Games",
-      link: "/games",
-    },
+    { id: 2, title: "Games", link: "/games" },
     { id: 3, title: "Reviews", link: "/review" },
     { id: 4, title: "News", link: "/blog" },
     { id: 5, title: "Contact", link: "/contact" },
+  ];
+
+  const socialIcons = [
+    { name: "pinterest", icon: <FaPinterest /> },
+    { name: "facebook", icon: <FaFacebookF /> },
+    { name: "twitter", icon: <FaTwitter /> },
+    { name: "dribbble", icon: <FaDribbble /> },
+    { name: "behance", icon: <FaBehance /> },
   ];
 
   // Custom styles for nav links
@@ -52,35 +64,33 @@ const Header = () => {
           <span className="me-2" style={{ color: "#0a2254", fontWeight: 500 }}>
             Follow us:
           </span>
-          {["pinterest", "facebook", "twitter", "dribbble", "behance"].map(
-            (social) => (
-              <Link
-                key={social}
-                href="#"
-                className="d-inline-flex align-items-center justify-content-center rounded-circle ms-2"
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  fontSize: "12px",
-                  backgroundColor: "#e1f0ff",
-                  color: "#00a6eb",
-                  transition: "transform 0.3s, background-color 0.3s",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = "#00a6eb";
-                  e.currentTarget.style.color = "#ffffff";
-                  e.currentTarget.style.transform = "scale(1.1)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = "#e1f0ff";
-                  e.currentTarget.style.color = "#00a6eb";
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              >
-                <i className={`fa fa-${social}`}></i>
-              </Link>
-            )
-          )}
+          {socialIcons.map((social) => (
+            <Link
+              key={social.name}
+              href="#"
+              className="d-inline-flex align-items-center justify-content-center rounded-circle ms-2"
+              style={{
+                width: "30px",
+                height: "30px",
+                fontSize: "14px",
+                backgroundColor: "#e1f0ff",
+                color: "#00a6eb",
+                transition: "transform 0.3s, background-color 0.3s",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = "#00a6eb";
+                e.currentTarget.style.color = "#ffffff";
+                e.currentTarget.style.transform = "scale(1.1)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = "#e1f0ff";
+                e.currentTarget.style.color = "#00a6eb";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            >
+              {social.icon}
+            </Link>
+          ))}
         </Container>
       </div>
 
@@ -171,7 +181,7 @@ const Header = () => {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <i className="fa fa-user me-2"></i> Login / Register
+                  <FaUser className="me-2" /> Login / Register
                 </Link>
               </div>
 
@@ -179,7 +189,7 @@ const Header = () => {
               <div className="user-panel d-none d-lg-block ms-auto">
                 <Link
                   href="/login"
-                  className="login-btn text-white text-decoration-none rounded-pill px-3 py-2"
+                  className="login-btn text-white text-decoration-none rounded-pill px-3 py-2 d-flex align-items-center"
                   style={{
                     background:
                       "linear-gradient(45deg, #0a2254 0%, #00a6eb 100%)",
@@ -195,7 +205,7 @@ const Header = () => {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                 >
-                  <i className="fa fa-user me-2"></i> Login / Register
+                  <FaUser className="me-2" /> <span>Login / Register</span>
                 </Link>
               </div>
             </Navbar.Collapse>

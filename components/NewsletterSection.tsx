@@ -27,13 +27,26 @@ const NewsletterSection = () => {
         <h2
           className="text-white mb-5"
           style={{
-            fontSize: "48px",
+            fontSize: "42px",
             fontWeight: 700,
-            fontStyle: "italic",
             textTransform: "uppercase",
+            position: "relative",
+            display: "inline-block",
+            paddingBottom: "15px",
           }}
         >
           Subscribe to our newsletter
+          <span
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "3px",
+              backgroundColor: "#00a6eb",
+            }}
+          ></span>
         </h2>
 
         <Form

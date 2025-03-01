@@ -74,7 +74,7 @@ const GamesList = () => {
       className="py-5"
       style={{
         padding: "108px 0",
-        background: "linear-gradient(45deg, #0a2254 0%, #00a6eb 100%)",
+        background: "linear-gradient(135deg, #f5f9ff 0%, #e1f0ff 100%)",
       }}
     >
       <Container>
@@ -87,17 +87,24 @@ const GamesList = () => {
                 style={{
                   width: "40px",
                   height: "34px",
-                  backgroundColor: "#0a4780",
+                  backgroundColor: "#00a6eb",
                   borderRadius: "17px",
                   transition: "all 0.3s",
                   fontSize: "15px",
                   fontWeight: 700,
+                  boxShadow: "0 2px 8px rgba(0, 166, 235, 0.3)",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = "#00a6eb";
+                  e.currentTarget.style.backgroundColor = "#0a2254";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0, 166, 235, 0.4)";
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = "#0a4780";
+                  e.currentTarget.style.backgroundColor = "#00a6eb";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 8px rgba(0, 166, 235, 0.3)";
                 }}
               >
                 {letter}
@@ -111,48 +118,82 @@ const GamesList = () => {
             <Row className="mx-auto mx-md-0">
               {games.map((game) => (
                 <Col key={game.id} lg={3} md={6} className="mb-5">
-                  <div className="game-item">
+                  <div
+                    className="game-item"
+                    style={{
+                      backgroundColor: "#ffffff",
+                      borderRadius: "10px",
+                      overflow: "hidden",
+                      boxShadow: "0 5px 20px rgba(0, 166, 235, 0.1)",
+                      transition: "all 0.3s ease",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      padding: "0 0 20px 0",
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.transform = "translateY(-10px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 10px 30px rgba(0, 166, 235, 0.2)";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 5px 20px rgba(0, 166, 235, 0.1)";
+                    }}
+                  >
                     <div className="mb-3">
                       <Image
                         src={game.image}
                         alt={game.title}
                         width={255}
                         height={255}
-                        className="img-fluid"
+                        className="img-fluid w-100"
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
-                    <h5
-                      className="text-white mb-3"
-                      style={{ fontSize: "20px" }}
-                    >
-                      {game.title}
-                    </h5>
-                    <Link
-                      href={`/games/${game.slug}`}
-                      className="read-more"
-                      style={{
-                        fontSize: "15px",
-                        textTransform: "uppercase",
-                        fontWeight: 700,
-                        fontStyle: "italic",
-                        color: "#00a6eb",
-                        transition: "all 0.3s",
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.color = "#ffffff";
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.color = "#00a6eb";
-                      }}
-                    >
-                      Read More{" "}
-                      <Image
-                        src="/img/icons/double-arrow.png"
-                        alt="#"
-                        width={20}
-                        height={10}
-                      />
-                    </Link>
+                    <div className="px-3 d-flex flex-column flex-grow-1">
+                      <h5
+                        className="mb-3"
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: 700,
+                          color: "#0a2254",
+                        }}
+                      >
+                        {game.title}
+                      </h5>
+                      <Link
+                        href={`/games/${game.slug}`}
+                        className="read-more mt-auto"
+                        style={{
+                          fontSize: "15px",
+                          textTransform: "uppercase",
+                          fontWeight: 700,
+                          color: "#00a6eb",
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          transition: "all 0.3s",
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.color = "#0a2254";
+                          e.currentTarget.style.transform = "translateX(5px)";
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.color = "#00a6eb";
+                          e.currentTarget.style.transform = "translateX(0)";
+                        }}
+                      >
+                        Read More{" "}
+                        <Image
+                          src="/img/icons/double-arrow.png"
+                          alt="#"
+                          width={20}
+                          height={10}
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </Col>
               ))}
@@ -163,7 +204,7 @@ const GamesList = () => {
                 <Link
                   key={page}
                   href={`/games?page=${page}`}
-                  className={`d-flex align-items-center justify-content-center rounded-circle text-white mx-1 ${
+                  className={`d-flex align-items-center justify-content-center rounded-circle mx-1 ${
                     activePage === page ? "active" : ""
                   }`}
                   style={{
@@ -176,7 +217,9 @@ const GamesList = () => {
                       activePage === page
                         ? "2px solid #00a6eb"
                         : "2px solid transparent",
-                    color: activePage === page ? "#00a6eb" : "#fff",
+                    color: activePage === page ? "#00a6eb" : "#0a2254",
+                    backgroundColor: "#ffffff",
+                    boxShadow: "0 2px 8px rgba(0, 166, 235, 0.2)",
                     transition: "all 0.3s",
                   }}
                   onClick={(e) => {
@@ -187,12 +230,18 @@ const GamesList = () => {
                     if (activePage !== page) {
                       e.currentTarget.style.border = "2px solid #00a6eb";
                       e.currentTarget.style.color = "#00a6eb";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 4px 12px rgba(0, 166, 235, 0.3)";
                     }
                   }}
                   onMouseOut={(e) => {
                     if (activePage !== page) {
                       e.currentTarget.style.border = "2px solid transparent";
-                      e.currentTarget.style.color = "#fff";
+                      e.currentTarget.style.color = "#0a2254";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 2px 8px rgba(0, 166, 235, 0.2)";
                     }
                   }}
                 >
