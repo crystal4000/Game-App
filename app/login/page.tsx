@@ -57,7 +57,7 @@ export default function LoginPage() {
         className="py-5"
         style={{
           padding: "104px 0",
-          background: "linear-gradient(45deg, #0a2254 0%, #00a6eb 100%)",
+          background: "linear-gradient(135deg, #f5f9ff 0%, #e1f0ff 100%)",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -69,16 +69,30 @@ export default function LoginPage() {
               <div
                 className="p-4 p-md-5"
                 style={{
-                  backgroundColor: "rgba(8, 22, 36, 0.8)",
-                  border: "1px solid rgba(0, 166, 235, 0.3)",
-                  boxShadow: "0 0 20px rgba(0, 166, 235, 0.3)",
-                  borderRadius: "10px",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid rgba(0, 166, 235, 0.1)",
+                  boxShadow: "0 10px 30px rgba(0, 166, 235, 0.15)",
+                  borderRadius: "12px",
                 }}
               >
-                <h2 className="text-white text-center mb-4">
-                  Login to Your Account
-                </h2>
-
+                <div className="text-center mb-4">
+                  <h2
+                    style={{
+                      color: "#0a2254",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Login to Your Account
+                  </h2>
+                  <div
+                    style={{
+                      height: "3px",
+                      width: "60px",
+                      backgroundColor: "#00a6eb",
+                      margin: "15px auto",
+                    }}
+                  />
+                </div>
                 {error && (
                   <Alert variant="danger" className="mb-4">
                     {error}
@@ -87,7 +101,7 @@ export default function LoginPage() {
 
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className="mb-4">
-                    <Form.Label className="text-white">
+                    <Form.Label style={{ color: "#0a2254", fontWeight: 600 }}>
                       Email Address
                     </Form.Label>
                     <Form.Control
@@ -102,7 +116,9 @@ export default function LoginPage() {
                   </Form.Group>
 
                   <Form.Group className="mb-4">
-                    <Form.Label className="text-white">Password</Form.Label>
+                    <Form.Label style={{ color: "#0a2254", fontWeight: 600 }}>
+                      Password
+                    </Form.Label>
                     <Form.Control
                       type="password"
                       name="password"
@@ -120,8 +136,9 @@ export default function LoginPage() {
                       name="rememberMe"
                       checked={formData.rememberMe}
                       onChange={handleChange}
-                      label="Remember me"
-                      className="text-white"
+                      label={
+                        <span style={{ color: "#0a2254" }}>Remember me</span>
+                      }
                     />
 
                     <Link
@@ -129,11 +146,11 @@ export default function LoginPage() {
                       style={{
                         color: "#00a6eb",
                         textDecoration: "none",
-                        fontWeight: 500,
+                        fontWeight: 600,
                         transition: "all 0.3s",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = "#ffffff";
+                        e.currentTarget.style.color = "#0a2254";
                       }}
                       onMouseOut={(e) => {
                         e.currentTarget.style.color = "#00a6eb";
@@ -147,7 +164,7 @@ export default function LoginPage() {
                     type="submit"
                     className="w-100 site-btn border-0 mb-4"
                     style={{
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: 700,
                       fontStyle: "italic",
                       padding: "15px 30px",
@@ -187,7 +204,7 @@ export default function LoginPage() {
                     )}
                   </Button>
 
-                  <div className="text-center text-white">
+                  <div className="text-center" style={{ color: "#0a2254" }}>
                     Don&apos;t have an account?{" "}
                     <Link
                       href="/register"
@@ -198,7 +215,7 @@ export default function LoginPage() {
                         transition: "all 0.3s",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = "#ffffff";
+                        e.currentTarget.style.color = "#0a2254";
                       }}
                       onMouseOut={(e) => {
                         e.currentTarget.style.color = "#00a6eb";
@@ -215,12 +232,10 @@ export default function LoginPage() {
         {/* Custom CSS to remove focus styles */}
         <style jsx>{`
           :global(.custom-input) {
-            background-color: transparent !important;
-            border: none !important;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.54) !important;
-            border-radius: 0 !important;
-            color: #fff !important;
-            padding: 10px 15px !important;
+            background-color: f5f9ff !important;
+            border: "1px solid #e1f0ff";
+            border-radius: 6px;
+            padding: 12px 15px !important;
             font-size: 16px !important;
             font-style: italic !important;
           }

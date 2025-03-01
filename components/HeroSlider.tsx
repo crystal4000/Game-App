@@ -95,7 +95,7 @@ const HeroSlider = () => {
             <div
               className="position-absolute w-100 h-100 top-0 start-0"
               style={{
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                backgroundColor: "rgba(10, 34, 84, 0.7)",
                 zIndex: 1,
               }}
             />
@@ -104,19 +104,51 @@ const HeroSlider = () => {
               style={{ zIndex: 2 }}
             >
               <Container>
-                <h1 className="fw-bolder mb-3 text-white hero-title">
+                <h1
+                  className="fw-bolder mb-3 text-white hero-title"
+                  style={{ textShadow: "0 0 30px rgba(0, 166, 235, 0.4)" }}
+                >
                   {slide.title}
                 </h1>
                 <p className="mx-auto mb-5 hero-description">
                   {slide.description}
                 </p>
-                <Link href={slide.btnLink} className="site-btn">
+                <Link
+                  href={slide.btnLink}
+                  className="site-btn "
+                  style={{
+                    backgroundColor: "#00a6eb",
+                    color: "#0a2254",
+                    border: "none",
+                    padding: "16px 30px",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    fontWeight: 700,
+                    fontSize: "14px",
+                    textTransform: "uppercase",
+                    position: "relative",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = "#0a2254";
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 10px 20px rgba(0, 166, 235, 0.3)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = "#00a6eb";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
                   {slide.btnText}{" "}
                   <Image
                     src="/img/icons/double-arrow.png"
                     alt="#"
                     width={20}
                     height={10}
+                    className="ms-2 img-fluid"
                   />
                 </Link>
               </Container>

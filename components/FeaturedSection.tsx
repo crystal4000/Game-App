@@ -20,15 +20,30 @@ const FeaturedSection = () => {
         style={{
           width: "calc(50% + 156px)",
           padding: "100px 50px 130px 79px",
+          boxShadow: "-10px 0 30px rgba(0, 166, 235, 0.1)",
         }}
       >
         <div className="text-box" style={{ maxWidth: "810px" }}>
           <div
             className="top-meta mb-3"
-            style={{ fontSize: "18px", color: "#68647d" }}
+            style={{ fontSize: "16px", color: "#6c757d" }}
           >
             11.11.18 / in{" "}
-            <Link href="#" style={{ color: "#b01ba5" }}>
+            <Link
+              href="#"
+              style={{
+                color: "#00a6eb",
+                textDecoration: "none",
+                fontWeight: 600,
+                transition: "color 0.3s",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.color = "#0a2254";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.color = "#00a6eb";
+              }}
+            >
               Games
             </Link>
           </div>
@@ -36,14 +51,24 @@ const FeaturedSection = () => {
           <h3
             className="my-4"
             style={{
-              fontSize: "60px",
+              fontSize: "48px",
               maxWidth: "100%",
+              color: "#0a2254",
+              fontWeight: 700,
+              lineHeight: 1.2,
             }}
           >
             The game you&apos;ve been waiting for is out now
           </h3>
 
-          <p className="mb-4" style={{ fontSize: "16px" }}>
+          <p
+            className="mb-4"
+            style={{
+              fontSize: "16px",
+              color: "#495057",
+              lineHeight: 1.7,
+            }}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
             ipsum suspendisse ultrices gravida. Ipsum dolor sit amet,
@@ -55,7 +80,27 @@ const FeaturedSection = () => {
             vestibulum metus...
           </p>
 
-          <Link href="#" className="read-more" style={{ color: "#251e2f" }}>
+          <Link
+            href="#"
+            style={{
+              color: "#00a6eb",
+              textDecoration: "none",
+              fontWeight: 700,
+              fontSize: "15px",
+              textTransform: "uppercase",
+              display: "inline-flex",
+              alignItems: "center",
+              transition: "all 0.3s",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.color = "#0a2254";
+              e.currentTarget.style.transform = "translateX(5px)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.color = "#00a6eb";
+              e.currentTarget.style.transform = "translateX(0)";
+            }}
+          >
             Read More{" "}
             <Image
               src="/img/icons/double-arrow.png"

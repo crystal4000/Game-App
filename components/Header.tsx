@@ -24,6 +24,7 @@ const Header = () => {
   // Custom styles for nav links
   const navLinkStyle = {
     transition: "color 0.3s, transform 0.2s",
+    fontWeight: 500,
   };
 
   const navLinkHoverStyle = {
@@ -43,33 +44,36 @@ const Header = () => {
       style={{ zIndex: 99 }}
     >
       {/* Top follow us bar - only visible on desktop */}
-      <div className="d-none d-lg-block" style={{ backgroundColor: "#0a2254" }}>
+      <div className="d-none d-lg-block" style={{ backgroundColor: "#f5f9ff" }}>
         <Container
           fluid
           className="px-4 py-2 d-flex justify-content-end align-items-center"
         >
-          <span className="text-white me-2">Follow us:</span>
+          <span className="me-2" style={{ color: "#0a2254", fontWeight: 500 }}>
+            Follow us:
+          </span>
           {["pinterest", "facebook", "twitter", "dribbble", "behance"].map(
             (social) => (
               <Link
                 key={social}
                 href="#"
-                className="d-inline-flex align-items-center justify-content-center rounded-circle text-white ms-2"
+                className="d-inline-flex align-items-center justify-content-center rounded-circle ms-2"
                 style={{
                   width: "30px",
                   height: "30px",
                   fontSize: "12px",
-                  backgroundColor: "rgba(0, 166, 235, 0.3)",
+                  backgroundColor: "#e1f0ff",
+                  color: "#00a6eb",
                   transition: "transform 0.3s, background-color 0.3s",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(0, 166, 235, 0.7)";
+                  e.currentTarget.style.backgroundColor = "#00a6eb";
+                  e.currentTarget.style.color = "#ffffff";
                   e.currentTarget.style.transform = "scale(1.1)";
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor =
-                    "rgba(0, 166, 235, 0.3)";
+                  e.currentTarget.style.backgroundColor = "#e1f0ff";
+                  e.currentTarget.style.color = "#00a6eb";
                   e.currentTarget.style.transform = "scale(1)";
                 }}
               >
@@ -83,8 +87,8 @@ const Header = () => {
       {/* Main header */}
       <div
         style={{
-          backgroundColor: "#081624",
-          boxShadow: "0 0 9px 3px rgba(0, 208, 255, 0.24)",
+          backgroundColor: "#ffffff",
+          boxShadow: "0 5px 15px rgba(0, 166, 235, 0.1)",
         }}
         className="mx-md-5 mx-0 mt-md-3 mt-0"
       >
@@ -101,19 +105,20 @@ const Header = () => {
                 height={100}
                 className="img-fluid"
               />
-              <span className="ms-2 fs-4 fw-bolder text-white">OTS GAMES</span>
+              <span
+                className="ms-2 fs-4 fw-bolder"
+                style={{ color: "#0a2254" }}
+              >
+                OTS GAMES
+              </span>
             </Link>
 
             <Navbar.Toggle
               aria-controls="basic-navbar-nav"
               onClick={() => setExpanded(!expanded)}
               className="border-0"
-              style={{ color: "#fff" }}
             >
-              <span
-                className="navbar-toggler-icon"
-                style={{ filter: "brightness(0) invert(1)" }}
-              ></span>
+              <span className="navbar-toggler-icon"></span>
             </Navbar.Toggle>
 
             <Navbar.Collapse id="basic-navbar-nav">
@@ -123,21 +128,21 @@ const Header = () => {
                     key={item.id}
                     as={Link}
                     href={item.link}
-                    className="text-white px-3 py-2 position-relative"
-                    style={navLinkStyle}
+                    className="px-3 py-2 position-relative"
+                    style={{ ...navLinkStyle, color: "#0a2254" }}
                     onMouseOver={(e) => {
                       Object.assign(e.currentTarget.style, navLinkHoverStyle);
                     }}
                     onMouseOut={(e) => {
-                      e.currentTarget.style.color = "white";
+                      e.currentTarget.style.color = "#0a2254";
                       e.currentTarget.style.transform = "translateY(0)";
                     }}
                     onMouseDown={(e) => {
                       Object.assign(e.currentTarget.style, navLinkActiveStyle);
                     }}
                     onMouseUp={(e) => {
-                      e.currentTarget.style.color = "white";
-                      e.currentTarget.style.fontWeight = "normal";
+                      e.currentTarget.style.color = "#0a2254";
+                      e.currentTarget.style.fontWeight = "500";
                       e.currentTarget.style.borderBottom = "none";
                     }}
                   >
@@ -171,7 +176,7 @@ const Header = () => {
               </div>
 
               {/* User panel for desktop view */}
-              <div className="user-panel d-none d-lg-block text-white ms-auto">
+              <div className="user-panel d-none d-lg-block ms-auto">
                 <Link
                   href="/login"
                   className="login-btn text-white text-decoration-none rounded-pill px-3 py-2"

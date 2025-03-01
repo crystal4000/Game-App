@@ -91,7 +91,7 @@ export default function RegisterPage() {
         className="py-5"
         style={{
           padding: "104px 0",
-          background: "linear-gradient(45deg, #0a2254 0%, #00a6eb 100%)",
+          background: "linear-gradient(135deg, #f5f9ff 0%, #e1f0ff 100%)",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -103,16 +103,30 @@ export default function RegisterPage() {
               <div
                 className="p-4 p-md-5"
                 style={{
-                  backgroundColor: "rgba(8, 22, 36, 0.8)",
-                  border: "1px solid rgba(0, 166, 235, 0.3)",
-                  boxShadow: "0 0 20px rgba(0, 166, 235, 0.3)",
-                  borderRadius: "10px",
+                  backgroundColor: "#ffffff",
+                  border: "1px solid rgba(0, 166, 235, 0.1)",
+                  boxShadow: "0 10px 30px rgba(0, 166, 235, 0.15)",
+                  borderRadius: "12px",
                 }}
               >
-                <h2 className="text-white text-center mb-4">
-                  Create Your Account
-                </h2>
-
+                <div className="text-center mb-4">
+                  <h2
+                    style={{
+                      color: "#0a2254",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Create Your Account
+                  </h2>
+                  <div
+                    style={{
+                      height: "3px",
+                      width: "60px",
+                      backgroundColor: "#00a6eb",
+                      margin: "15px auto",
+                    }}
+                  />
+                </div>
                 {error && (
                   <Alert variant="danger" className="mb-4">
                     {error}
@@ -201,7 +215,7 @@ export default function RegisterPage() {
                       checked={formData.agreeTerms}
                       onChange={handleChange}
                       label={
-                        <span className="text-white">
+                        <span style={{ color: "#0a2254" }}>
                           I agree to the{" "}
                           <Link
                             href="/terms"
@@ -220,7 +234,7 @@ export default function RegisterPage() {
                             href="/privacy"
                             style={{ color: "#00a6eb", transition: "all 0.3s" }}
                             onMouseOver={(e) => {
-                              e.currentTarget.style.color = "#ffffff";
+                              e.currentTarget.style.color = "#0a2254";
                             }}
                             onMouseOut={(e) => {
                               e.currentTarget.style.color = "#00a6eb";
@@ -238,7 +252,7 @@ export default function RegisterPage() {
                     type="submit"
                     className="w-100 site-btn border-0 mb-4"
                     style={{
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: 700,
                       fontStyle: "italic",
                       padding: "15px 30px",
@@ -278,7 +292,7 @@ export default function RegisterPage() {
                     )}
                   </Button>
 
-                  <div className="text-center text-white">
+                  <div className="text-center" style={{ color: "#0a2254" }}>
                     Already have an account?{" "}
                     <Link
                       href="/login"
@@ -289,7 +303,7 @@ export default function RegisterPage() {
                         transition: "all 0.3s",
                       }}
                       onMouseOver={(e) => {
-                        e.currentTarget.style.color = "#ffffff";
+                        e.currentTarget.style.color = "#0a2254";
                       }}
                       onMouseOut={(e) => {
                         e.currentTarget.style.color = "#00a6eb";
@@ -306,12 +320,10 @@ export default function RegisterPage() {
         {/* Custom CSS to remove focus styles */}
         <style jsx>{`
           :global(.custom-input) {
-            background-color: transparent !important;
-            border: none !important;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.54) !important;
-            border-radius: 0 !important;
-            color: #fff !important;
-            padding: 10px 15px !important;
+           background-color: f5f9ff !important;
+            border: "1px solid #e1f0ff";
+            border-radius: 6px;
+            padding: 12px 15px !important;
             font-size: 16px !important;
             font-style: italic !important;
           }

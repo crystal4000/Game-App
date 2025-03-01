@@ -62,6 +62,13 @@ const Footer = () => {
                 style={{
                   fontSize: "16px",
                   fontWeight: 500,
+                  transition: "all 0.3s",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.color = "#00a6eb";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.color = "#ffffff";
                 }}
               >
                 {item.title}
@@ -82,6 +89,17 @@ const Footer = () => {
                   height: "32px",
                   fontSize: "12px",
                   backgroundColor: "rgba(0, 166, 235, 0.2)",
+                  transition: "all 0.3s",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(0, 166, 235, 0.5)";
+                  e.currentTarget.style.transform = "scale(1.1)";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "rgba(0, 166, 235, 0.2)";
+                  e.currentTarget.style.transform = "scale(1)";
                 }}
               >
                 <i className={`fa fa-${social}`}></i>
